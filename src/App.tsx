@@ -5,7 +5,6 @@ import { store } from '@store';
 import { ThemeProvider } from '@styled';
 import { defaultTheme } from '@theme';
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -29,4 +28,4 @@ export const App: React.FC = () => (
   </Provider>
 );
 
-export default hot(App);
+export default App;

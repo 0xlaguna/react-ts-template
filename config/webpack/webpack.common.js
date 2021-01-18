@@ -66,13 +66,17 @@ module.exports = {
         removeComments: true
       }
     }),
-    new CopyPlugin([{ from: STATIC, to: DIST }]),
+    new CopyPlugin({
+      patterns: [
+        { from: STATIC, to: DIST }
+      ]
+    }),
     new ForkTsCheckerWebpackPlugin(),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
       failOnError: true
     }),
-    new webpack.HashedModuleIdsPlugin(),
+    new webpack.ids.HashedModuleIdsPlugin(),
     new CompressionPlugin(),
     new Dotenv({ systemvars: true })
   ]

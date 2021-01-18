@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const DIST = path.resolve(__dirname, '../../dist');
 
@@ -7,8 +7,8 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     path: DIST,
-    filename: '[name].[hash].js',
-    chunkFilename: '[name].[hash].js',
+    filename: '[name].[fullhash].js',
+    chunkFilename: '[name].[fullhash].js',
     publicPath: '/',
   },
   resolve: {
